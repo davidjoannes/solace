@@ -1,0 +1,719 @@
+<title>Solace at Manhattan Parkway</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Solace at Manhattan Parkway — a calm, newly designed one-bedroom stay in Araneta City, Cubao, Quezon City. Sleeps up to 5, with walkways to Gateway Mall, MRT-3 and LRT-2.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: oak-and-sage hospitality site — sticky menu, one page shown at a time (hash routes), photo-led home */
+:root{
+  --bg:#f7f6f1; --surface:#efede4; --fg:#26271f; --muted:#666759; --line:#dddbcf;
+  --sage:#56664a; --sage-ink:#ffffff; --oak:#9c6f42; --red:#a8322c;
+  --display:"Marcellus", "Cormorant Garamond", Georgia, serif;
+  --body:"Karla", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#181a15; --surface:#22251e; --fg:#ecebe3; --muted:#a6a796; --line:#353829;
+    --sage:#9db38a; --sage-ink:#141611; --oak:#d3a676; --red:#e0665d; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#181a15; --surface:#22251e; --fg:#ecebe3; --muted:#a6a796; --line:#353829;
+  --sage:#9db38a; --sage-ink:#141611; --oak:#d3a676; --red:#e0665d; color-scheme:dark;
+}
+*{box-sizing:border-box}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sage);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.9rem,4.2vw,2.8rem)}
+h3{font-size:1.3rem}
+p{margin:0}
+.eyebrow{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.lede{color:var(--muted);max-width:62ch}
+.small{font-size:.88rem;color:var(--muted)}
+
+/* ---------- menu ---------- */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{font-family:var(--display);font-size:1.3rem;text-decoration:none;white-space:nowrap}
+.brand small{font-family:var(--body);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:8px}
+.menu{display:flex;gap:4px;font-size:.92rem}
+.menu a{text-decoration:none;color:var(--muted);padding:8px 11px;border-radius:999px;white-space:nowrap}
+.menu a:hover{color:var(--fg)}
+.menu a[aria-current="page"]{color:var(--fg);background:var(--surface)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line);background:transparent;border-radius:50%;cursor:pointer;color:var(--fg);font-size:1.1rem}
+@media (max-width:1040px){
+  .menu{display:none}
+  .burger{display:grid;place-items:center}
+  .brand small{display:none}
+}
+.drawer{position:fixed;inset:0;z-index:15;background:var(--bg);padding:calc(18px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:6px;overflow-y:auto}
+.drawer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.drawer a.dlink{display:flex;justify-content:space-between;align-items:baseline;gap:12px;text-decoration:none;padding:14px 0;border-bottom:1px solid var(--line)}
+.drawer a.dlink b{font-family:var(--display);font-weight:400;font-size:1.7rem}
+.drawer a.dlink span{color:var(--muted);font-size:.85rem;text-align:right}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s;font-family:inherit}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--sage);color:var(--sage-ink)}
+.btn-ghost{border-color:var(--line);color:var(--fg);background:transparent}
+.btn-sm{padding:9px 16px;font-size:.85rem}
+.btn[aria-disabled="true"]{opacity:.55;pointer-events:none}
+
+/* ---------- pages ---------- */
+.page{padding-block:clamp(36px,6vw,72px) clamp(64px,9vw,104px);animation:fade .35s ease}
+@keyframes fade{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+.page-head{display:grid;gap:12px;margin-bottom:clamp(32px,5vw,52px)}
+.page-head h1{font-size:clamp(2.3rem,5.5vw,3.8rem)}
+.block{margin-top:clamp(44px,7vw,72px)}
+.block > h2{margin-bottom:22px}
+.next{margin-top:clamp(56px,8vw,88px);padding-top:28px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+.next a.go{text-decoration:none;display:grid;gap:2px;text-align:right;margin-left:auto}
+.next a.go b{font-family:var(--display);font-weight:400;font-size:1.6rem}
+
+/* home */
+.hero-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(28px,5vw,64px);align-items:center}
+.hero h1{font-size:clamp(2.8rem,7vw,5.2rem);letter-spacing:-.01em}
+.hero h1 span{display:block;font-size:.4em;letter-spacing:.2em;text-transform:uppercase;color:var(--oak);margin-top:14px;font-family:var(--body);font-weight:700}
+.hero-copy{display:grid;gap:22px;min-width:0}
+.hero-copy .lede{font-size:1.1rem}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-img{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:5/4;max-width:100%}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:12px;bottom:12px;background:rgba(20,22,17,.62);color:#f3f1ea;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:clamp(40px,6vw,60px)}
+.fact{padding:20px 18px;display:grid;gap:2px}
+.fact + .fact{border-left:1px solid var(--line)}
+.fact b{font-family:var(--display);font-weight:400;font-size:1.5rem}
+.fact span{color:var(--muted);font-size:.9rem}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tile{display:grid;gap:8px;align-content:start;text-decoration:none;padding:24px;border:1px solid var(--line);border-radius:8px;background:var(--bg);transition:border-color .2s, transform .2s}
+.tile:hover{border-color:var(--sage);transform:translateY(-2px)}
+.tile .k{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--oak);font-weight:700}
+.tile b{font-family:var(--display);font-weight:400;font-size:1.45rem}
+.tile p{color:var(--muted);font-size:.94rem}
+.tile .arrow{color:var(--sage);font-weight:700;font-size:.9rem;margin-top:4px}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-img{order:-1}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact:nth-child(3){border-left:0}
+  .fact:nth-child(n+3){border-top:1px solid var(--line)}
+  .tiles{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){.tiles{grid-template-columns:1fr}}
+
+/* the space */
+.rooms{display:grid;gap:clamp(56px,8vw,96px)}
+.room{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.room.flip{grid-template-columns:1fr 1.2fr}
+.room.flip .room-media{order:2}
+.room-media{display:grid;gap:12px;min-width:0}
+.room-media.two{grid-template-columns:1fr 1fr}
+.room-media button{all:unset;cursor:zoom-in;display:block;border-radius:6px;overflow:hidden;background:var(--surface)}
+.room-media button:focus-visible{outline:2px solid var(--sage);outline-offset:3px}
+.room-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:transform .4s}
+.room-media.two img{aspect-ratio:3/4}
+.room-media button:hover img{transform:scale(1.02)}
+.room-text{display:grid;gap:14px;min-width:0}
+.room-num{font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--oak);font-weight:700}
+.room-text h3{font-size:clamp(1.6rem,3vw,2.2rem)}
+.room-text p{color:var(--muted)}
+.ticks{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:.95rem}
+.ticks li{display:flex;gap:10px;align-items:baseline}
+.ticks li::before{content:"";flex:0 0 6px;height:6px;border-radius:50%;background:var(--sage);transform:translateY(-2px)}
+@media (max-width:820px){.room,.room.flip{grid-template-columns:1fr}.room.flip .room-media{order:0}}
+
+/* amenities */
+.amen{display:grid;grid-template-columns:repeat(4,1fr);gap:32px 28px}
+.amen h3{font-size:1.12rem;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.amen ul{list-style:none;padding:0;margin:0;display:grid;gap:7px;font-size:.95rem;color:var(--muted)}
+@media (max-width:920px){.amen{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.amen{grid-template-columns:1fr}}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);align-items:center;background:var(--surface);border-radius:10px;padding:clamp(24px,4vw,44px)}
+.feature .pool-art{aspect-ratio:4/3;border-radius:8px;background:
+  repeating-linear-gradient(170deg, color-mix(in srgb,var(--sage) 22%,transparent) 0 2px, transparent 2px 22px),
+  linear-gradient(160deg, #8fb3ad, #4f7f86);position:relative;overflow:hidden}
+.feature .pool-art::after{content:"Outdoor pool";position:absolute;left:14px;bottom:12px;color:#fff;font-family:var(--display);font-size:1.5rem}
+.feature-text{display:grid;gap:14px;min-width:0}
+.feature-text p{color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{padding:22px;border:1px solid var(--line);border-radius:8px;display:grid;gap:8px;align-content:start;min-width:0}
+.card p{color:var(--muted);font-size:.95rem}
+@media (max-width:820px){.feature,.grid2{grid-template-columns:1fr}}
+
+/* getting around */
+.line{border:1px solid var(--line);border-radius:10px;padding:clamp(20px,3vw,32px);display:grid;gap:20px}
+.line + .line{margin-top:20px}
+.line-top{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.badge{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.85rem;color:#fff;flex:0 0 auto}
+.b-mrt{background:#2f6db3}.b-lrt{background:#6a3d9a}.b-bus{background:#7a6b52}.b-air{background:#3e5a5c}.b-car{background:#2f7a52}
+.line-top div{display:grid;min-width:0}
+.line-top b{font-family:var(--display);font-weight:400;font-size:1.5rem}
+.stops-wrap{overflow-x:auto;padding-bottom:6px}
+.stops{display:flex;list-style:none;margin:0;padding:28px 6px 0;min-width:max-content;position:relative}
+.stops li{position:relative;width:88px;text-align:center;font-size:.76rem;color:var(--muted);line-height:1.25;padding-top:16px}
+.stops li::before{content:"";position:absolute;top:-6px;left:0;right:0;height:4px;background:var(--lc)}
+.stops li:first-child::before{left:50%}
+.stops li:last-child::before{right:50%}
+.stops li::after{content:"";position:absolute;top:-11px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--bg);border:3px solid var(--lc)}
+.stops li.here{color:var(--fg);font-weight:700}
+.stops li.here::after{width:22px;height:22px;margin-left:-11px;top:-15px;background:var(--lc);box-shadow:0 0 0 4px color-mix(in srgb,var(--lc) 25%,transparent)}
+.stops li.here span{position:absolute;top:-46px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lc)}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kv div{display:grid;gap:4px;align-content:start;min-width:0}
+.kv dt{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.kv dd{margin:0;font-size:.95rem;font-variant-numeric:tabular-nums}
+@media (max-width:760px){.kv{grid-template-columns:1fr}}
+
+/* eat & drink */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chip{font:inherit;font-size:.88rem;padding:8px 15px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--sage);border-color:var(--sage);color:var(--sage-ink)}
+.zones{display:grid;gap:clamp(36px,5vw,52px)}
+.zone-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.zone-head span{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);font-weight:700}
+.spots{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.spot{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:14px 0;border-bottom:1px solid var(--line);min-width:0}
+.spot b{font-weight:600}
+.spot em{font-style:normal;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--oak);font-weight:700;align-self:center}
+.spot p{grid-column:1/-1;color:var(--muted);font-size:.93rem}
+.spot a{font-size:.85rem;color:var(--sage);font-weight:600;text-decoration:none;grid-column:1/-1}
+@media (max-width:760px){.spots{grid-template-columns:1fr}}
+
+/* events */
+.ev-list{display:grid}
+.ev{display:grid;grid-template-columns:86px 1fr auto;gap:18px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.ev-date{display:grid;justify-items:center;padding:8px 0;border:1px solid var(--line);border-radius:8px;line-height:1.1;font-variant-numeric:tabular-nums}
+.ev-date small{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--oak);font-weight:700}
+.ev-date b{font-family:var(--display);font-weight:400;font-size:1.6rem}
+.ev-name{min-width:0}
+.ev-name b{font-weight:600;display:block}
+.ev-name span{color:var(--muted);font-size:.9rem}
+.venue{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:5px 10px;border-radius:999px;background:var(--surface);color:var(--muted);white-space:nowrap}
+@media (max-width:600px){.ev{grid-template-columns:72px 1fr}.venue{display:none}}
+.empty{padding:28px;border:1px dashed var(--line);border-radius:8px;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+
+/* book */
+.bookband{background:var(--sage);color:var(--sage-ink);border-radius:12px;padding:clamp(24px,5vw,52px);display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center}
+.bookband h2{color:inherit}
+.bookband p{opacity:.88;max-width:52ch}
+.book-ctas{display:grid;gap:12px}
+.book-ctas .btn{justify-content:space-between;background:var(--sage-ink);color:var(--sage);font-size:1rem;padding:16px 22px;border-radius:8px}
+.book-ctas .btn small{font-weight:500;opacity:.75}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.note h3{font-size:1.12rem;margin-bottom:8px}
+.note p{color:var(--muted);font-size:.95rem}
+@media (max-width:820px){.bookband,.notes{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding-block:32px;color:var(--muted);font-size:.86rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:20;background:rgba(14,15,12,.93);display:grid;place-items:center;padding:max(20px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(20px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-height:80vh;max-width:min(1100px,100%);border-radius:4px}
+.lb-cap{color:#e9e7de;text-align:center;margin-top:12px;font-size:.92rem}
+.lb-x,.lb-nav{position:absolute;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:50%;width:44px;height:44px;font-size:1.3rem;cursor:pointer}
+.lb-x{top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px))}
+.lb-prev{left:calc(12px + env(safe-area-inset-left,0px));top:50%}
+.lb-next{right:calc(12px + env(safe-area-inset-right,0px));top:50%}
+</style>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#home">Solace <small>at Manhattan Parkway</small></a>
+    <div class="menu" id="menu">
+      <a href="#space">The Space</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#getting-around">Getting Around</a>
+      <a href="#eat">Eat &amp; Drink</a>
+      <a href="#events">Events</a>
+    </div>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-sm" href="#book">Book</a>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="drawer-top">
+    <span class="brand">Solace</span>
+    <button class="burger" style="display:grid" id="drawerClose" type="button" aria-label="Close menu">✕</button>
+  </div>
+  <a class="dlink" href="#home"><b>Home</b><span>Welcome</span></a>
+  <a class="dlink" href="#space"><b>The Space</b><span>Room by room</span></a>
+  <a class="dlink" href="#amenities"><b>Amenities</b><span>Unit, pool &amp; building</span></a>
+  <a class="dlink" href="#getting-around"><b>Getting Around</b><span>MRT-3, LRT-2, airport</span></a>
+  <a class="dlink" href="#eat"><b>Eat &amp; Drink</b><span>Restaurants &amp; cafés</span></a>
+  <a class="dlink" href="#events"><b>Events</b><span>Concerts &amp; shows nearby</span></a>
+  <a class="dlink" href="#book"><b>Book</b><span>On Airbnb</span></a>
+</div>
+
+<main>
+<!-- ================= HOME ================= -->
+<section class="page hero" data-page="home">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Manhattan Parkway Tower 2 · Araneta City · Cubao</p>
+        <h1>Solace<span>at Manhattan Parkway</span></h1>
+        <p class="lede">A calm, newly designed one-bedroom home in the middle of Araneta City. Warm oak, soft lighting and room for up to four, with walkways to Gateway Mall, the MRT and the LRT.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#book">Check availability</a>
+          <a class="btn btn-ghost" href="#space">Tour the space</a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="img/living.jpg" alt="Living room with a beige sectional sofa, round oak coffee table and fluted oak TV wall" width="1232" height="978">
+        <span class="tag">Design render · photos coming soon</span>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>Up to 4</b><span>guests</span></div>
+      <div class="fact"><b>42 sqm</b><span>1 bedroom · queen + sofa bed</span></div>
+      <div class="fact"><b>Full kitchen</b><span>cook, dine, stay longer</span></div>
+      <div class="fact"><b>Pool</b><span>outdoor, in the building</span></div>
+    </div>
+
+    <div class="block">
+      <h2>Plan your stay</h2>
+      <div class="tiles">
+        <a class="tile" href="#space"><span class="k">The Space</span><b>Room by room</b><p>Living room with sofa bed, queen bedroom, kitchen and rain shower.</p><span class="arrow">See the rooms →</span></a>
+        <a class="tile" href="#amenities"><span class="k">Amenities</span><b>Pool &amp; building</b><p>What's in the unit, the outdoor pool, security and Manhattan Row downstairs.</p><span class="arrow">See amenities →</span></a>
+        <a class="tile" href="#getting-around"><span class="k">Getting Around</span><b>MRT-3 &amp; LRT-2</b><p>Train hours, fares, where each line goes, and getting here from the airport.</p><span class="arrow">Plan your trip →</span></a>
+        <a class="tile" href="#eat"><span class="k">Eat &amp; Drink</span><b>Restaurants &amp; cafés</b><p>From Manhattan Row at the door to Gateway Mall 2 and Cubao Expo.</p><span class="arrow">Find a meal →</span></a>
+        <a class="tile" href="#events"><span class="k">Events</span><b>What's on</b><p>Concerts and shows at the Big Dome and New Frontier Theater, a short walk away.</p><span class="arrow">See events →</span></a>
+        <a class="tile" href="#book"><span class="k">Book</span><b>Find your dates</b><p>See open dates and book securely on Airbnb.</p><span class="arrow">Book now →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE SPACE ================= -->
+<section class="page" data-page="space" hidden>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">The Space</p>
+      <h1>Room by room</h1>
+      <p class="lede">Every corner was redesigned for guests: built-in storage so bags have a place, mood lighting for slow evenings, and furniture that folds out when the whole family comes. Tap any image to enlarge it.</p>
+    </div>
+    <div class="rooms">
+      <article class="room">
+        <div class="room-media two">
+          <button type="button" data-lb="0" aria-label="Enlarge living room image"><img src="img/living.jpg" alt="Living room with sectional sofa and fluted oak TV wall" loading="lazy"></button>
+          <button type="button" data-lb="1" aria-label="Enlarge sofa bed image"><img src="img/sofabed.jpg" alt="Living room sofa pulled out into a bed" loading="lazy"></button>
+        </div>
+        <div class="room-text">
+          <span class="room-num">Living</span>
+          <h3>Unwind, then fold out a bed</h3>
+          <p>A deep sectional faces a fluted oak wall with a big-screen TV and soundbar. When it's time to sleep, the sofa opens into a bed for two more guests.</p>
+          <ul class="ticks"><li>Sofa bed for extra guests</li><li>Wall-mounted TV with soundbar</li><li>Warm LED mood lighting</li></ul>
+        </div>
+      </article>
+      <article class="room flip">
+        <div class="room-media">
+          <button type="button" data-lb="2" aria-label="Enlarge bedroom image"><img src="img/bedroom.jpg" alt="Bedroom with queen bed, storage drawers, bedside lamps and a red framed window" loading="lazy"></button>
+        </div>
+        <div class="room-text">
+          <span class="room-num">Bedroom</span>
+          <h3>A queen bed and a quiet room</h3>
+          <p>A queen bed with storage drawers, bedside lamps on both sides and a built-in bookshelf. The unit's original red window was kept as a small nod to the building's history.</p>
+          <ul class="ticks"><li>Queen-size bed</li><li>Floor-to-ceiling wardrobe</li><li>Blinds for late mornings</li></ul>
+        </div>
+      </article>
+      <article class="room">
+        <div class="room-media">
+          <button type="button" data-lb="3" aria-label="Enlarge wardrobe and vanity image"><img src="img/wardrobe.jpg" alt="Wardrobe wall with full-length mirror and a vanity desk with a round lit mirror" loading="lazy" style="object-position:center 40%"></button>
+        </div>
+        <div class="room-text">
+          <span class="room-num">Wardrobe &amp; vanity</span>
+          <h3>Room to unpack</h3>
+          <p>Floor-to-ceiling cabinets mean you can live out of a closet instead of a suitcase. A full-length mirror and a backlit vanity make getting ready easy.</p>
+          <ul class="ticks"><li>Full-length door mirror</li><li>Vanity desk with lit round mirror</li></ul>
+        </div>
+      </article>
+      <article class="room flip">
+        <div class="room-media two">
+          <button type="button" data-lb="4" aria-label="Enlarge kitchen image"><img src="img/kitchen.jpg" alt="L-shaped oak kitchen with stainless fridge, stove and microwave" loading="lazy"></button>
+          <button type="button" data-lb="5" aria-label="Enlarge dining image"><img src="img/dining.jpg" alt="Entryway with pull-out oak dining table, spice shelves and shoe cabinet" loading="lazy"></button>
+        </div>
+        <div class="room-text">
+          <span class="room-num">Kitchen &amp; dining</span>
+          <h3>Cook a real meal</h3>
+          <p>An L-shaped kitchen with a full-size fridge, stove and oven, plus a pull-out dining table by the entry that seats the group and tucks away after.</p>
+          <ul class="ticks"><li>Refrigerator, stove and oven</li><li>Microwave, kettle and coffee maker</li><li>Pull-out dining table</li><li>Shoe cabinet and hooks at the door</li></ul>
+        </div>
+      </article>
+      <article class="room">
+        <div class="room-media two">
+          <button type="button" data-lb="6" aria-label="Enlarge bathroom image"><img src="img/bath1.jpg" alt="Bathroom with vessel sink, oak cabinet and glass shower" loading="lazy"></button>
+          <button type="button" data-lb="7" aria-label="Enlarge shower image"><img src="img/bath2.jpg" alt="Glass-enclosed shower with rain showerhead and water heater" loading="lazy"></button>
+        </div>
+        <div class="room-text">
+          <span class="room-num">Bathroom</span>
+          <h3>Hot rain shower</h3>
+          <p>A walk-in glass shower with a rain head and water heater, a stone vessel sink and soft lighting in the shelf niches.</p>
+          <ul class="ticks"><li>Hot water, rain + handheld shower</li><li>Bidet spray</li><li>Fresh towels provided</li></ul>
+        </div>
+      </article>
+    </div>
+    <div class="next"><a class="btn btn-ghost" href="#home">← Home</a><a class="go" href="#amenities"><span class="small">Next</span><b>Amenities →</b></a></div>
+  </div>
+</section>
+
+<!-- ================= AMENITIES ================= -->
+<section class="page" data-page="amenities" hidden>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Amenities</p>
+      <h1>Everything you need</h1>
+      <p class="lede">The unit is set up for real living, and the building gives you a pool, round-the-clock security and covered walkways into the rest of Araneta City.</p>
+    </div>
+
+    <div class="feature">
+      <div class="pool-art" role="img" aria-label="Illustration of the building's outdoor pool"></div>
+      <div class="feature-text">
+        <span class="room-num">Outside the unit</span>
+        <h2>Swim, then step out to the city</h2>
+        <p>Manhattan Parkway has an outdoor swimming pool for residents and guests. Pool hours and rules are in the welcome guide you'll receive before check-in.</p>
+        <ul class="ticks">
+          <li>Outdoor swimming pool</li>
+          <li>24/7 security, CCTV in common areas</li>
+          <li>Elevators to every floor</li>
+          <li>Paid public parking nearby in Araneta City (no dedicated slot)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>In the unit</h2>
+      <div class="amen">
+        <div><h3>Sleep</h3><ul><li>Queen bed</li><li>Sofa bed in the living room</li><li>Fresh linens &amp; pillows</li><li>Air conditioning in the bedroom</li><li>Electric fan in the living room</li><li>Blinds</li></ul></div>
+        <div><h3>Kitchen</h3><ul><li>Full-size refrigerator</li><li>Stove &amp; oven</li><li>Microwave</li><li>Kettle &amp; coffee maker</li><li>Cookware &amp; dishes</li></ul></div>
+        <div><h3>Stay connected</h3><ul><li>Wi-Fi</li><li>Smart TV &amp; soundbar</li><li>Dining table for laptop work</li></ul></div>
+        <div><h3>Bath &amp; storage</h3><ul><li>Hot rain shower</li><li>Towels &amp; toiletries</li><li>Floor-to-ceiling wardrobe</li><li>Vanity with lit mirror</li></ul></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Right outside your door</h2>
+      <div class="grid2">
+        <div class="card"><h3>Manhattan Row</h3><p>A strip of cafés and restaurants on Gen. Malvar Avenue, between Manhattan Parkway and Parkview. Coffee, snacks and a dog-and-cat café at street level.</p></div>
+        <div class="card"><h3>Elevated walkways</h3><p>The Manhattan complex is linked by covered bridgeways to the MRT-3 and LRT-2 stations and onward to Gateway Mall and New Frontier Theater, so you can stay out of the rain and traffic.</p></div>
+      </div>
+    </div>
+    <div class="next"><a class="btn btn-ghost" href="#space">← The Space</a><a class="go" href="#getting-around"><span class="small">Next</span><b>Getting Around →</b></a></div>
+  </div>
+</section>
+
+<!-- ================= GETTING AROUND ================= -->
+<section class="page" data-page="getting-around" hidden>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Getting Around</p>
+      <h1>Two train lines at your door</h1>
+      <p class="lede">Araneta Center–Cubao is one of the few places in Metro Manila where the MRT-3 and LRT-2 meet. From here you can reach Makati, Ortigas, Manila and the university belt without a car.</p>
+    </div>
+
+    <div class="line" style="--lc:#2f6db3">
+      <div class="line-top"><span class="badge b-mrt">MRT 3</span><div><b>MRT Line 3</b><span class="small">North–south along EDSA · 13 stations</span></div></div>
+      <div class="stops-wrap"><ol class="stops">
+        <li>North Avenue</li><li>Quezon Avenue</li><li>GMA Kamuning</li><li class="here"><span>You are here</span>Araneta Center–Cubao</li><li>Santolan–Annapolis</li><li>Ortigas</li><li>Shaw Boulevard</li><li>Boni</li><li>Guadalupe</li><li>Buendia</li><li>Ayala</li><li>Magallanes</li><li>Taft Avenue</li>
+      </ol></div>
+      <dl class="kv">
+        <div><dt>Good for</dt><dd>Ortigas (Megamall, Podium), Ayala in Makati, North Avenue (SM North, Trinoma). Transfer to LRT-1 at Taft Avenue.</dd></div>
+        <div><dt>Hours</dt><dd>First trains about 4:30 AM (North Ave) and 5:05 AM (Taft). Last trains about 10:30–11:09 PM on weekdays, 9:30–10:09 PM on weekends.</dd></div>
+        <div><dt>Paying</dt><dd>Beep card, single-journey ticket, or tap a Visa/Mastercard, phone or GCash QR at the Fast Lane gates. Fares are under ₱30 end to end.</dd></div>
+      </dl>
+    </div>
+
+    <div class="line" style="--lc:#6a3d9a">
+      <div class="line-top"><span class="badge b-lrt">LRT 2</span><div><b>LRT Line 2</b><span class="small">East–west along Aurora Blvd · 13 stations</span></div></div>
+      <div class="stops-wrap"><ol class="stops">
+        <li>Antipolo</li><li>Marikina–Pasig</li><li>Santolan</li><li>Katipunan</li><li>Anonas</li><li class="here"><span>You are here</span>Araneta Center–Cubao</li><li>Betty Go-Belmonte</li><li>Gilmore</li><li>J. Ruiz</li><li>V. Mapa</li><li>Pureza</li><li>Legarda</li><li>Recto</li>
+      </ol></div>
+      <dl class="kv">
+        <div><dt>Good for</dt><dd>Katipunan (Ateneo, UP Diliman), Marikina and Antipolo to the east; Gilmore, San Juan and Recto (Divisoria, Binondo) to the west.</dd></div>
+        <div><dt>Hours</dt><dd>First trips 5:00 AM from both ends. Last trips 9:00 PM from Antipolo and 9:30 PM from Recto.</dd></div>
+        <div><dt>Paying</dt><dd>Beep card (₱13–₱33) or single-journey ticket (₱15–₱35). The same beep card works on the MRT-3 and LRT-1.</dd></div>
+      </dl>
+    </div>
+
+    <div class="block">
+      <h2>Other ways to get here</h2>
+      <div class="grid2">
+        <div class="card"><div class="line-top"><span class="badge b-air">NAIA</span><div><b style="font-size:1.25rem">From the airport</b></div></div><p>Book a Grab car to "Manhattan Parkway Tower 2, Araneta City, Cubao." Travel time depends heavily on traffic, so allow 1 to 1.5 hours, longer at rush hour.</p></div>
+        <div class="card"><div class="line-top"><span class="badge b-bus">BUS</span><div><b style="font-size:1.25rem">Provincial buses</b></div></div><p>The Araneta City bus terminal serves routes to and from the provinces, and the EDSA Carousel busway runs past Cubao.</p></div>
+      </div>
+      <div class="links"><a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Manhattan+Parkway+Tower+2+Araneta+City+Cubao+Quezon+City" target="_blank" rel="noopener">Open in Google Maps ↗</a></div>
+      <p class="small" style="margin-top:16px">Train schedules change on holidays and during maintenance. Check DOTr and LRMC advisories before late-night or holiday trips.</p>
+    </div>
+    <div class="next"><a class="btn btn-ghost" href="#amenities">← Amenities</a><a class="go" href="#eat"><span class="small">Next</span><b>Eat &amp; Drink →</b></a></div>
+  </div>
+</section>
+
+<!-- ================= EAT & DRINK ================= -->
+<section class="page" data-page="eat" hidden>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Eat &amp; Drink</p>
+      <h1>Where to eat nearby</h1>
+      <p class="lede">You're surrounded by food. These are our picks, grouped by how far you'll walk. Opening hours change, so tap "Map" to check before you go.</p>
+    </div>
+    <div class="chips" role="group" aria-label="Filter by type">
+      <button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-f="cafe" aria-pressed="false">Cafés</button>
+      <button class="chip" type="button" data-f="filipino" aria-pressed="false">Filipino</button>
+      <button class="chip" type="button" data-f="asian" aria-pressed="false">Asian</button>
+      <button class="chip" type="button" data-f="western" aria-pressed="false">Western</button>
+    </div>
+    <div class="zones" id="zones"></div>
+    <div class="next"><a class="btn btn-ghost" href="#getting-around">← Getting Around</a><a class="go" href="#events"><span class="small">Next</span><b>Events →</b></a></div>
+  </div>
+</section>
+
+<!-- ================= EVENTS ================= -->
+<section class="page" data-page="events" hidden>
+  <div class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Events</p>
+      <h1>What's on in Araneta City</h1>
+      <p class="lede">The Smart Araneta Coliseum (the "Big Dome") and New Frontier Theater are both a short walk away, so you can skip the post-concert traffic entirely. Book your stay around a show.</p>
+    </div>
+    <div class="chips" role="group" aria-label="Filter by venue">
+      <button class="chip" type="button" data-v="all" aria-pressed="true">All venues</button>
+      <button class="chip" type="button" data-v="Big Dome" aria-pressed="false">Big Dome</button>
+      <button class="chip" type="button" data-v="New Frontier" aria-pressed="false">New Frontier Theater</button>
+      <button class="chip" type="button" data-v="Citywide" aria-pressed="false">Citywide</button>
+    </div>
+    <div class="ev-list" id="evList"></div>
+    <p class="small" style="margin-top:16px">Dates come from the venues' published calendars. Always confirm with the official ticketing page before booking.</p>
+    <div class="links">
+      <a class="btn btn-ghost" href="https://www.aranetacity.com/events" target="_blank" rel="noopener">Araneta City events ↗</a>
+      <a class="btn btn-ghost" href="https://www.smartaranetacoliseum.com/upcoming-events.html" target="_blank" rel="noopener">Big Dome calendar ↗</a>
+      <a class="btn btn-ghost" href="https://newfrontiertheater.com/upcoming-events" target="_blank" rel="noopener">New Frontier calendar ↗</a>
+      <a class="btn btn-ghost" href="https://www.ticketnet.com.ph/event-list" target="_blank" rel="noopener">Ticketnet ↗</a>
+    </div>
+
+    <div class="block">
+      <h2>Sports at the Big Dome</h2>
+      <div class="grid2">
+        <div class="card"><h3>PBA basketball</h3><p>The Smart Araneta Coliseum is the home court of Philippine pro basketball. The current PBA conference runs into December, with games at the Big Dome through the season. Check the PBA schedule for Big Dome dates.</p><a class="small" style="color:var(--sage);font-weight:600;text-decoration:none" href="https://www.pba.ph/" target="_blank" rel="noopener">PBA schedule ↗</a></div>
+        <div class="card"><h3>UAAP &amp; more</h3><p>College basketball (UAAP), volleyball, boxing and big pageants like Binibining Pilipinas all play the Big Dome during the year. Game-day crowds are huge, and you'll be walking home while everyone else waits for a ride.</p><a class="small" style="color:var(--sage);font-weight:600;text-decoration:none" href="https://www.smartaranetacoliseum.com/" target="_blank" rel="noopener">Big Dome website ↗</a></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Any day of the week</h2>
+      <div class="grid2">
+        <div class="card"><h3>Sagrada Familia Church</h3><p>Daily Mass on Level 5 of Gateway Mall 2.</p></div>
+        <div class="card"><h3>Fiesta Carnival</h3><p>A classic indoor amusement center, reopened in 2023. Good for kids.</p></div>
+        <div class="card"><h3>Art in Island</h3><p>An interactive 3D art museum on 15th Avenue where you step into the paintings for photos.</p></div>
+        <div class="card"><h3>Cubao Expo</h3><p>Vintage shops, small galleries, cafés and bars, busiest in the evening.</p></div>
+      </div>
+    </div>
+    <div class="next"><a class="btn btn-ghost" href="#eat">← Eat &amp; Drink</a><a class="go" href="#book"><span class="small">Next</span><b>Book →</b></a></div>
+  </div>
+</section>
+
+<!-- ================= BOOK ================= -->
+<section class="page" data-page="book" hidden>
+  <div class="wrap">
+    <div class="bookband">
+      <div style="display:grid;gap:14px;min-width:0">
+        <p class="eyebrow" style="color:inherit;opacity:.75">Book your stay</p>
+        <h2>Find your dates</h2>
+        <p>Check availability and book securely on Airbnb. Have a question first? Send us a message through the listing and we'll get back to you.</p>
+      </div>
+      <div class="book-ctas" id="bookCtas"></div>
+    </div>
+    <div class="block">
+      <h2>Good to know</h2>
+      <div class="notes">
+        <div class="note"><h3>Check-in &amp; check-out</h3><p>Times and arrival instructions are sent after booking, with a welcome guide covering the building, pool and nearby spots.</p></div>
+        <div class="note"><h3>Who it's for</h3><p>Couples, small families, friends in town for a concert at the Big Dome, and business travelers who want a kitchen and space to spread out.</p></div>
+        <div class="note"><h3>About these images</h3><p>The unit has just been renovated, and the images on this site are design renders of the finished space. Real photos are coming soon.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand" style="color:var(--fg)">Solace at Manhattan Parkway</span>
+    <span>Manhattan Parkway Tower 2, 2 General Malvar Ave, Araneta City, Cubao, Quezon City, Philippines</span>
+    <span>© <span id="yr">2026</span></span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-x" type="button" aria-label="Close">✕</button>
+  <button class="lb-nav lb-prev" type="button" aria-label="Previous image">‹</button>
+  <figure style="margin:0;display:grid;justify-items:center"><img id="lbImg" alt=""><figcaption class="lb-cap" id="lbCap"></figcaption></figure>
+  <button class="lb-nav lb-next" type="button" aria-label="Next image">›</button>
+</div>
+
+<script>
+/* =====================================================================
+   EASY EDITS — change the lists below; the pages update automatically.
+   ===================================================================== */
+
+/* Booking links: paste each listing URL between the quotes. Empty = "Coming soon". */
+const BOOKING = [
+  { name: "Airbnb",      url: "" }
+  /* Add more later, e.g. { name: "Booking.com", url: "" } */
+];
+
+/* Events: past dates hide themselves. Format: start "YYYY-MM-DD", optional end. */
+const EVENTS = [
+  { start:"2026-10-18", name:"11th PPOP Music Awards", venue:"Big Dome" },
+  { start:"2026-10-18", name:"Angela Ken: Panahon Na Natin", venue:"New Frontier" },
+  { start:"2026-10-23", name:"Bulaklak: Viva Hot Babes Reunion Concert", venue:"New Frontier" },
+  { start:"2026-10-24", name:"I Belong to the Zoo: The First Major Concert", venue:"New Frontier" },
+  { start:"2026-10-24", end:"2026-10-25", name:"One Zone Fest", venue:"Big Dome" },
+  { start:"2026-10-26", name:"Air Supply: A Matter of Time Tour", venue:"Big Dome" },
+  { start:"2026-10-30", name:"Zara Larsson: Midnight Sun Tour 2026", venue:"Big Dome" },
+  { start:"2026-10-31", name:"Hwang In Youp Fan Meeting: To You in Manila", venue:"New Frontier" },
+  { start:"2026-10-31", name:"Halloween celebration: The Rise of the Four Elements", venue:"Citywide" },
+  { start:"2026-11-05", name:"So Ji Sub Asia Fan Meeting Tour in Manila", venue:"New Frontier" },
+  { start:"2026-11-08", name:"ALX Alamat: The Legendary Experience", venue:"New Frontier" },
+  { start:"2026-11-11", end:"2026-11-12", name:"Another Level Live in Manila", venue:"New Frontier" },
+  { start:"2026-11-14", name:"Jona: Chapters", venue:"New Frontier" },
+  { start:"2026-11-15", name:"Atsuko Okatsuka: The Big Bowl Tour", venue:"New Frontier" },
+  { start:"2026-11-17", name:"Yeng Constantino: Biyaheng Bente", venue:"Big Dome" },
+  { start:"2026-11-21", name:"Gong Yoo Fan Meeting Tour: The Long Take in Manila", venue:"Big Dome" },
+  { start:"2026-11-21", name:"Mico: Running From a Feeling", venue:"New Frontier" },
+  { start:"2026-11-25", name:"Simple Plan: Bigger Than You Think! World Tour", venue:"Big Dome" },
+  { start:"2026-11-27", name:"Do That Again: Asia Tour 2026", venue:"New Frontier" },
+  { start:"2026-11-29", name:"Marielle: Most Requested", venue:"New Frontier" },
+  { start:"2026-12-03", end:"2026-12-04", name:"Cup of Joe: Symphony, Live at the Big Dome", venue:"Big Dome" },
+  { start:"2026-12-04", name:"Dan & Phil: Hard Launch World Tour 2026", venue:"New Frontier" },
+  { start:"2026-12-08", name:"Jillian Ward: Star of the New Gen", venue:"New Frontier" },
+  { start:"2026-12-18", name:"Adie: Himig ng Tadhana", venue:"New Frontier" },
+  { start:"2027-01-09", name:"Sienna Spiro: My House Tour", venue:"New Frontier" },
+  { start:"2027-01-28", name:"Blue: 25th Anniversary Tour", venue:"New Frontier" },
+  { start:"2027-02-16", name:"Freya Skye: Stars Align Tour in Manila", venue:"New Frontier" },
+  { start:"2027-02-20", name:"Young K: Youngest Solo Tour", venue:"New Frontier" },
+  { start:"2027-04-17", end:"2027-04-18", name:"An Ending in Itself Tour Asia 2027 in Manila", venue:"New Frontier" }
+];
+
+/* Restaurants & cafés. type: cafe | filipino | asian | western */
+const FOOD = [
+  { zone:"Manhattan Row", dist:"At your door", items:[
+    { name:"Book and Borders Cafe", type:"cafe", note:"Coffee, pasta, sandwiches and snacks among the shelves." },
+    { name:"Cab Cafe", type:"cafe", note:"Coffee and desserts, plus Visayan comfort food like batchoy." },
+    { name:"Bengal Brew / Wolf & Bear Dog Cafe", type:"cafe", note:"Coffee and food with resident cats and dogs." },
+    { name:"Karaoke Pop", type:"filipino", note:"Sharing plates and private karaoke rooms for groups." }
+  ]},
+  { zone:"Gateway Mall & Gateway Mall 2", dist:"Short walk", items:[
+    { name:"World Kitchens (Gateway Mall 2, Level 4)", type:"asian", note:"A food hall with Spanish, Japanese, Hong Kong, Indian and Filipino counters." },
+    { name:"Palenque (Gateway Mall 2)", type:"filipino", note:"Regional Filipino dishes from around the country under one roof." },
+    { name:"Grace Park (Gateway Mall 2)", type:"western", note:"Farm-to-table cooking with local ingredients." },
+    { name:"Mesa", type:"filipino", note:"Filipino comfort food, good for families." },
+    { name:"Café Mary Grace", type:"cafe", note:"Ensaymada, cheese rolls and cozy café meals." },
+    { name:"% Arabica", type:"cafe", note:"Specialty coffee for the morning walk." },
+    { name:"Ramen Nagi & Ippudo", type:"asian", note:"Two of Manila's favorite ramen shops." }
+  ]},
+  { zone:"Cubao Expo", dist:"Walk", items:[
+    { name:"Bellini's", type:"western", note:"Old-school Italian (pasta, pizza, steak), open since 1999." },
+    { name:"Habanero Kitchen Bar", type:"filipino", note:"Spicy lechon, sisig and pizza." },
+    { name:"Best of Luck", type:"asian", note:"Cantonese and Chinese-Filipino favorites: siomai and noodles." }
+  ]},
+  { zone:"Hotels & more", dist:"Walk", items:[
+    { name:"Food Exchange Manila (Novotel)", type:"western", note:"Big buffet with live cooking stations, good for celebrations." },
+    { name:"Le Bistro (Ibis Styles rooftop)", type:"western", note:"French dishes with city views." },
+    { name:"Jeongwon (Art in Island)", type:"asian", note:"Korean food, easy to pair with a museum visit." },
+    { name:"Farmers Market", type:"filipino", note:"Buy fresh seafood and produce to cook in your kitchen." }
+  ]}
+];
+
+/* ===================================================================== */
+(function(){
+  const $ = s => document.querySelector(s), $$ = s => document.querySelectorAll(s);
+
+  // ---------- router ----------
+  const pages = [...$$('[data-page]')].map(p => p.dataset.page);
+  const drawer = $('#drawer'), burger = $('#burger');
+  function route(){
+    let h = (location.hash || '#home').slice(1);
+    if (!pages.includes(h)) h = 'home';
+    $$('[data-page]').forEach(p => p.hidden = p.dataset.page !== h);
+    $$('#menu a, .drawer a').forEach(a => a.getAttribute('href') === '#' + h ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
+    document.title = 'Solace at Manhattan Parkway' + (h === 'home' ? '' : ' · ' + ($('#menu a[href="#'+h+'"]')?.textContent || 'Book'));
+    closeDrawer();
+    window.scrollTo(0, 0);
+  }
+  function closeDrawer(){ drawer.hidden = true; burger.setAttribute('aria-expanded','false'); }
+  burger.onclick = () => { drawer.hidden = false; burger.setAttribute('aria-expanded','true'); $('#drawerClose').focus(); };
+  $('#drawerClose').onclick = () => { closeDrawer(); burger.focus(); };
+  window.addEventListener('hashchange', route);
+  route();
+
+  // ---------- booking ----------
+  BOOKING.forEach(b => {
+    const a = document.createElement('a'); a.className = 'btn';
+    if (b.url) { a.href = b.url; a.target = '_blank'; a.rel = 'noopener'; a.innerHTML = 'Book on ' + b.name + ' <small>↗</small>'; }
+    else { a.setAttribute('aria-disabled','true'); a.innerHTML = b.name + ' <small>Coming soon</small>'; }
+    $('#bookCtas').appendChild(a);
+  });
+  $('#yr').textContent = new Date().getFullYear();
+
+  // ---------- food ----------
+  const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const typeLabel = {cafe:'Café',filipino:'Filipino',asian:'Asian',western:'Western'};
+  function renderFood(f){
+    $('#zones').innerHTML = FOOD.map(z => {
+      const items = z.items.filter(i => f === 'all' || i.type === f);
+      if (!items.length) return '';
+      return '<div><div class="zone-head"><h2 style="font-size:1.6rem">' + esc(z.zone) + '</h2><span>' + esc(z.dist) + '</span></div><div class="spots">' +
+        items.map(i => '<div class="spot"><b>' + esc(i.name) + '</b><em>' + typeLabel[i.type] + '</em><p>' + esc(i.note) + '</p><a href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(i.name.replace(/\(.*?\)/g,'') + ' Araneta City Cubao') + '" target="_blank" rel="noopener">Map ↗</a></div>').join('') +
+        '</div></div>';
+    }).join('');
+  }
+  $$('[data-f]').forEach(b => b.onclick = () => { $$('[data-f]').forEach(x => x.setAttribute('aria-pressed', x === b)); renderFood(b.dataset.f); });
+  renderFood('all');
+
+  // ---------- events ----------
+  const mon = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const todayISO = (() => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); })();
+  const venueName = {"Big Dome":"Smart Araneta Coliseum","New Frontier":"New Frontier Theater","Citywide":"Around Araneta City"};
+  function renderEvents(v){
+    const list = EVENTS.filter(e => (e.end || e.start) >= todayISO && (v === 'all' || e.venue === v)).sort((a,b) => a.start.localeCompare(b.start));
+    if (!list.length) { $('#evList').innerHTML = '<div class="empty">No upcoming events listed here right now. Check the official calendars below for the latest shows.</div>'; return; }
+    $('#evList').innerHTML = list.map(e => {
+      const [y,m,d] = e.start.split('-'), d2 = e.end ? e.end.split('-')[2] : null;
+      return '<div class="ev"><div class="ev-date"><small>' + mon[+m-1] + '</small><b>' + (+d) + (d2 ? '–' + (+d2) : '') + '</b><small style="color:var(--muted);letter-spacing:.05em">' + y + '</small></div>' +
+        '<div class="ev-name"><b>' + esc(e.name) + '</b><span>' + venueName[e.venue] + '</span></div><span class="venue">' + esc(e.venue) + '</span></div>';
+    }).join('');
+  }
+  $$('[data-v]').forEach(b => b.onclick = () => { $$('[data-v]').forEach(x => x.setAttribute('aria-pressed', x === b)); renderEvents(b.dataset.v); });
+  renderEvents('all');
+
+  // ---------- lightbox ----------
+  const shots = [['img/living.jpg','Living room'],['img/sofabed.jpg','Living room with the sofa bed open'],['img/bedroom.jpg','Bedroom'],['img/wardrobe.jpg','Wardrobe and vanity'],['img/kitchen.jpg','Kitchen'],['img/dining.jpg','Dining and entryway'],['img/bath1.jpg','Bathroom'],['img/bath2.jpg','Rain shower']];
+  const lb = $('#lb'), img = $('#lbImg'), cap = $('#lbCap'); let i = 0, last = null;
+  const show = n => { i = (n + shots.length) % shots.length; img.src = shots[i][0]; img.alt = shots[i][1]; cap.textContent = shots[i][1] + ' · design render'; };
+  $$('[data-lb]').forEach(b => b.addEventListener('click', () => { last = b; show(+b.dataset.lb); lb.hidden = false; lb.querySelector('.lb-x').focus(); }));
+  const close = () => { lb.hidden = true; if (last) last.focus(); };
+  lb.querySelector('.lb-x').onclick = close;
+  lb.querySelector('.lb-prev').onclick = () => show(i - 1);
+  lb.querySelector('.lb-next').onclick = () => show(i + 1);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { if (!lb.hidden) close(); else if (!drawer.hidden) closeDrawer(); }
+    if (lb.hidden) return;
+    if (e.key === 'ArrowLeft') show(i - 1);
+    if (e.key === 'ArrowRight') show(i + 1);
+  });
+})();
+</script>
