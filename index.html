@@ -247,7 +247,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
       <a href="#events">Events</a>
     </div>
     <div class="nav-right">
-      <a class="btn btn-primary btn-sm" href="#book">Book</a>
+      <a class="btn btn-primary btn-sm" href="#book">Book your stay</a>
       <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </div>
@@ -264,7 +264,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
   <a class="dlink" href="#getting-around"><b>Getting Around</b><span>MRT-3, LRT-2, airport</span></a>
   <a class="dlink" href="#eat"><b>Eat &amp; Drink</b><span>Restaurants &amp; cafés</span></a>
   <a class="dlink" href="#events"><b>Events</b><span>Concerts &amp; shows nearby</span></a>
-  <a class="dlink" href="#book"><b>Book</b><span>On Airbnb</span></a>
+  <a class="dlink" href="#book"><b>Book your stay</b><span>On Airbnb</span></a>
 </div>
 
 <main>
@@ -301,7 +301,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
         <a class="tile" href="#getting-around"><span class="k">Getting Around</span><b>MRT-3 &amp; LRT-2</b><p>Train hours, fares, where each line goes, and getting here from the airport.</p><span class="arrow">Plan your trip →</span></a>
         <a class="tile" href="#eat"><span class="k">Eat &amp; Drink</span><b>Restaurants &amp; cafés</b><p>From Manhattan Row at the door to Gateway Mall 2 and Cubao Expo.</p><span class="arrow">Find a meal →</span></a>
         <a class="tile" href="#events"><span class="k">Events</span><b>What's on</b><p>Concerts and shows at the Big Dome and New Frontier Theater, a short walk away.</p><span class="arrow">See events →</span></a>
-        <a class="tile" href="#book"><span class="k">Book</span><b>Find your dates</b><p>See open dates and book securely on Airbnb.</p><span class="arrow">Book now →</span></a>
+        <a class="tile" href="#book"><span class="k">Book your stay</span><b>Find your dates</b><p>See open dates and book securely on Airbnb.</p><span class="arrow">Book now →</span></a>
       </div>
     </div>
   </div>
@@ -530,7 +530,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
         <div class="card"><h3>Cubao Expo</h3><p>Vintage shops, small galleries, cafés and bars, busiest in the evening.</p></div>
       </div>
     </div>
-    <div class="next"><a class="btn btn-ghost" href="#eat">← Eat &amp; Drink</a><a class="go" href="#book"><span class="small">Next</span><b>Book →</b></a></div>
+    <div class="next"><a class="btn btn-ghost" href="#eat">← Eat &amp; Drink</a><a class="go" href="#book"><span class="small">Next</span><b>Book your stay →</b></a></div>
   </div>
 </section>
 
@@ -658,7 +658,7 @@ const FOOD = [
     if (!pages.includes(h)) h = 'home';
     $$('[data-page]').forEach(p => p.hidden = p.dataset.page !== h);
     $$('#menu a, .drawer a').forEach(a => a.getAttribute('href') === '#' + h ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
-    document.title = 'Solace at Manhattan Parkway' + (h === 'home' ? '' : ' · ' + ($('#menu a[href="#'+h+'"]')?.textContent || 'Book'));
+    document.title = 'Solace at Manhattan Parkway' + (h === 'home' ? '' : ' · ' + ($('#menu a[href="#'+h+'"]')?.textContent || 'Book your stay'));
     closeDrawer();
     window.scrollTo(0, 0);
   }
