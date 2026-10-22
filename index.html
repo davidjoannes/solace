@@ -309,9 +309,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
       <h2>Plan your stay</h2>
       <div class="tiles">
         <a class="tile" href="#space"><span class="k">The Space</span><b>Room by room</b><p>Living room with sofa bed, queen bedroom, kitchen and rain shower.</p><span class="arrow">See the rooms →</span></a>
-        <a class="tile" href="#amenities"><span class="k">Amenities</span><b>Pool, gym &amp; more</b><p>What's in the unit, plus the building's pool, gym, kids play area and Manhattan Row downstairs.</p><span class="arrow">See amenities →</span></a>
+        <a class="tile" href="#amenities"><span class="k">Amenities</span><b>Pool, gym &amp; more</b><p>What's in the unit, plus the building's pool, gym and kids play area.</p><span class="arrow">See amenities →</span></a>
         <a class="tile" href="#getting-around"><span class="k">Getting Around</span><b>MRT-3 &amp; LRT-2</b><p>Train hours, fares, where each line goes, and getting here from the airport.</p><span class="arrow">Plan your trip →</span></a>
-        <a class="tile" href="#eat"><span class="k">Eat &amp; Drink</span><b>Restaurants &amp; cafés</b><p>From Manhattan Row at the door to Gateway Mall 2 and Cubao Expo.</p><span class="arrow">Find a meal →</span></a>
+        <a class="tile" href="#eat"><span class="k">Eat &amp; Drink</span><b>Restaurants &amp; cafés</b><p>From Gateway Mall 2 to Cubao Expo, all a short walk away.</p><span class="arrow">Find a meal →</span></a>
         <a class="tile" href="#events"><span class="k">Events</span><b>What's on</b><p>Concerts and shows at the Big Dome and New Frontier Theater, a short walk away.</p><span class="arrow">See events →</span></a>
         <a class="tile" href="#book"><span class="k">Book your stay</span><b>Find your dates</b><p>See open dates and book securely on Airbnb.</p><span class="arrow">Book now →</span></a>
       </div>
@@ -428,7 +428,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
     <div class="block">
       <h2>Right outside your door</h2>
       <div class="grid2">
-        <div class="card"><h3>Manhattan Row</h3><p>A strip of cafés and restaurants on Gen. Malvar Avenue, between Manhattan Parkway and Parkview. Coffee, snacks and a dog-and-cat café at street level.</p></div>
+        <div class="card"><h3>Cubao Expo</h3><p>A short walk away: Bellini's, Habanero, Best of Luck, The Brewman Coffee and Jeongwon, plus vintage shops and small bars that come alive in the evening.</p></div>
         <div class="card"><h3>Elevated walkways</h3><p>The Manhattan complex is linked by covered bridgeways to the MRT-3 and LRT-2 stations and onward to Gateway Mall and New Frontier Theater, so you can stay out of the rain and traffic.</p></div>
       </div>
     </div>
@@ -634,30 +634,28 @@ const EVENTS = [
 
 /* Restaurants & cafés. type: cafe | filipino | asian | western */
 const FOOD = [
-  { zone:"Manhattan Row", dist:"At your door", items:[
-    { name:"Book and Borders Cafe", type:"cafe", note:"Coffee, pasta, sandwiches and snacks among the shelves." },
-    { name:"Cab Cafe", type:"cafe", note:"Coffee and desserts, plus Visayan comfort food like batchoy." },
-    { name:"Bengal Brew / Wolf & Bear Dog Cafe", type:"cafe", note:"Coffee and food with resident cats and dogs." },
-    { name:"Karaoke Pop", type:"filipino", note:"Sharing plates and private karaoke rooms for groups." }
-  ]},
   { zone:"Gateway Mall & Gateway Mall 2", dist:"Short walk", items:[
-    { name:"World Kitchens (Gateway Mall 2, Level 4)", type:"asian", note:"A food hall with Spanish, Japanese, Hong Kong, Indian and Filipino counters." },
+    { name:"World Kitchens (Gateway Mall 2, Level 4)", type:"asian", note:"A food hall with dishes from chefs around the world." },
     { name:"Palenque (Gateway Mall 2)", type:"filipino", note:"Regional Filipino dishes from around the country under one roof." },
-    { name:"Grace Park (Gateway Mall 2)", type:"western", note:"Farm-to-table cooking with local ingredients." },
-    { name:"Mesa", type:"filipino", note:"Filipino comfort food, good for families." },
+    { name:"Grace Park (Gateway Mall 2)", type:"filipino", note:"Margarita Forés's farm-to-table Filipino cooking." },
+    { name:"Abé (Gateway Mall 2)", type:"filipino", note:"Kapampangan classics like kare-kare and crispy pata." },
+    { name:"Mamou at Home (Gateway Mall 2)", type:"western", note:"Steaks and pasta, great for a celebration dinner." },
+    { name:"Botejyu (Gateway Mall 2)", type:"asian", note:"Okonomiyaki, ramen and sushi." },
+    { name:"Ramen Nagi (Gateway Mall)", type:"asian", note:"One of Manila's favorite ramen shops." },
     { name:"Café Mary Grace", type:"cafe", note:"Ensaymada, cheese rolls and cozy café meals." },
-    { name:"% Arabica", type:"cafe", note:"Specialty coffee for the morning walk." },
-    { name:"Ramen Nagi & Ippudo", type:"asian", note:"Two of Manila's favorite ramen shops." }
+    { name:"Cộng Cà Phê (Gateway Mall 2)", type:"cafe", note:"Vietnamese coffee and bánh mì." },
+    { name:"Angkan (Gateway Mall 2)", type:"cafe", note:"Filipino-inspired specialty coffee and ensaymada balls." }
   ]},
-  { zone:"Cubao Expo", dist:"Walk", items:[
-    { name:"Bellini's", type:"western", note:"Old-school Italian (pasta, pizza, steak), open since 1999." },
-    { name:"Habanero Kitchen Bar", type:"filipino", note:"Spicy lechon, sisig and pizza." },
-    { name:"Best of Luck", type:"asian", note:"Cantonese and Chinese-Filipino favorites: siomai and noodles." }
+  { zone:"Cubao Expo", dist:"Short walk", items:[
+    { name:"Bellini's", type:"western", note:"Old-school Italian: pasta, pizza and focaccia." },
+    { name:"Habanero Kitchen Bar", type:"filipino", note:"Oyster sisig, lechon and pizza. Closed Mondays." },
+    { name:"Best of Luck", type:"asian", note:"Chili peanut noodles and salted egg chicken. Closed Mondays." },
+    { name:"The Brewman Coffee", type:"cafe", note:"Specialty coffee and matcha with board games. Closed Mondays." },
+    { name:"Jeongwon", type:"asian", note:"Generous Korean meals near Art in Island. Closed Mondays." }
   ]},
   { zone:"Hotels & more", dist:"Walk", items:[
     { name:"Food Exchange Manila (Novotel)", type:"western", note:"Big buffet with live cooking stations, good for celebrations." },
-    { name:"Le Bistro (Ibis Styles rooftop)", type:"western", note:"French dishes with city views." },
-    { name:"Jeongwon (Art in Island)", type:"asian", note:"Korean food, easy to pair with a museum visit." },
+    { name:"Le Bistro (Ibis Styles)", type:"western", note:"Relaxed French bistro with sunset views." },
     { name:"Farmers Market", type:"filipino", note:"Buy fresh seafood and produce to cook in your kitchen." }
   ]}
 ];
