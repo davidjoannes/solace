@@ -230,8 +230,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 footer{border-top:1px solid var(--line);padding-block:32px;color:var(--muted);font-size:.86rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;align-items:center}
 .social{display:flex;gap:10px}
-.social a{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;color:var(--fg);transition:background .2s,color .2s}
-.social a:hover{background:var(--oak);color:#fff;border-color:var(--oak)}
+.social a{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;border:1px solid var(--oak);border-radius:50%;background:var(--oak);color:#fff;transition:filter .2s,transform .2s}
+.social a:hover{filter:brightness(1.1);transform:translateY(-1px)}
 .social svg{width:18px;height:18px;fill:currentColor}
 @media (max-width:560px){footer .brand{font-size:1.25rem;white-space:normal}}
 
