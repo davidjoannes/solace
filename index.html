@@ -177,6 +177,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .feature-text{display:grid;gap:14px;min-width:0}
 .feature-text p{color:var(--muted)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid3 .span-all{grid-column:1/-1}
+@media (max-width:920px){.grid3{grid-template-columns:1fr 1fr}}@media (max-width:560px){.grid3{grid-template-columns:1fr}}
 .card{padding:22px;border:1px solid var(--line);border-radius:8px;display:grid;gap:8px;align-content:start;min-width:0}
 .card p{color:var(--muted);font-size:.95rem}
 @media (max-width:820px){.feature,.grid2{grid-template-columns:1fr}}
@@ -457,9 +459,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
 
     <div class="block">
       <h2>Right outside your door</h2>
-      <div class="grid2">
-        <div class="card"><h3>Cubao Expo</h3><p>A short walk away: Bellini's, Habanero, Best of Luck, The Brewman Coffee and Jeongwon, plus vintage shops and small bars that come alive in the evening.</p></div>
-        <div class="card"><h3>Elevated walkways</h3><p>The Manhattan complex is linked by covered bridgeways to the MRT-3 and LRT-2 stations and onward to Gateway Mall and New Frontier Theater, so you can stay out of the rain and traffic.</p></div>
+      <div class="grid3">
+        <div class="card span-all"><h3>Elevated walkways</h3><p>The Manhattan complex is linked by covered bridgeways to the MRT-3 and LRT-2 stations and onward to Gateway Mall and New Frontier Theater, so you can stay out of the rain and traffic.</p></div>
+        <div class="card"><h3>Gateway Mall</h3><p>Araneta City's flagship mall, with Rustan's, Uniqlo, H&amp;M, gadget shops and plenty of restaurants. Connected to the LRT-2 station.</p></div>
+        <div class="card"><h3>Gateway Mall 2</h3><p>The newest wing: around 100 restaurants, the World Kitchens food hall, a Shopwise supermarket, cinemas and a bowling center.</p></div>
+        <div class="card"><h3>SM Araneta City</h3><p>Formerly SM Cubao. A huge SM Store, an SM Supermarket and Cyberzone for gadgets and repairs.</p></div>
+        <div class="card"><h3>Ali Mall</h3><p>The Philippines' first integrated mall, named after Muhammad Ali. Local shops, casual eats and everyday errands, linked to SM by a skybridge.</p></div>
+        <div class="card"><h3>Farmers Plaza &amp; Farmers Market</h3><p>Budget shopping and a bazaar at Farmers Plaza, plus the wet market next door for fresh seafood, meat and produce to cook in your kitchen.</p></div>
+        <div class="card"><h3>Cubao Expo</h3><p>Bellini's, Habanero, Best of Luck, The Brewman Coffee and Jeongwon, plus vintage shops and small bars that come alive in the evening.</p></div>
       </div>
     </div>
     <div class="next"><a class="btn btn-ghost" href="#space">← The Space</a><a class="go" href="#getting-around"><span class="small">Next</span><b>Getting Around →</b></a></div>
