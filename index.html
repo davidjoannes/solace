@@ -165,10 +165,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media (max-width:920px){.amen{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.amen{grid-template-columns:1fr}}
 .feature{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);align-items:center;background:var(--surface);border-radius:10px;padding:clamp(24px,4vw,44px)}
-.feature .pool-art{aspect-ratio:4/3;border-radius:8px;background:
-  repeating-linear-gradient(170deg, color-mix(in srgb,var(--sage) 22%,transparent) 0 2px, transparent 2px 22px),
-  linear-gradient(160deg, #8fb3ad, #4f7f86);position:relative;overflow:hidden}
-.feature .pool-art::after{content:"Pool · Gym · Kids play";position:absolute;left:14px;bottom:12px;color:#fff;font-family:var(--display);font-size:1.5rem}
+.feature .feat-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;display:block}
+.amen-gal{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.amen-gal figure{margin:0;grid-column:span 2;min-width:0}
+.amen-gal figure:nth-child(n+4){grid-column:span 3}
+.amen-gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;display:block}
+.amen-gal figcaption{margin-top:8px;font-size:.92rem;color:var(--muted)}
+.amen-gal figcaption b{color:var(--fg);font-weight:600;display:block}
+@media (max-width:720px){.amen-gal{grid-template-columns:1fr 1fr}.amen-gal figure,.amen-gal figure:nth-child(n+4){grid-column:span 1}}
+@media (max-width:420px){.amen-gal{grid-template-columns:1fr}}
 .feature-text{display:grid;gap:14px;min-width:0}
 .feature-text p{color:var(--muted)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -415,17 +420,28 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
     </div>
 
     <div class="feature">
-      <div class="pool-art" role="img" aria-label="Illustration of the building's pool"></div>
+      <img class="feat-img" src="img/amen-gym2.jpg" alt="Manhattan Parkway Tower 2 gym with free weights and machines" loading="lazy">
       <div class="feature-text">
         <span class="room-num">Outside the unit</span>
         <h2>Swim, train, play</h2>
-        <p>Manhattan Parkway Tower 2 has an outdoor swimming pool, a gym and a kids play center for residents and guests. Hours and rules are in the welcome guide you'll receive before check-in.</p>
+        <p>Manhattan Parkway Tower 2 has an outdoor swimming pool, a gym, a kids play center and a game room for residents and guests. Hours and rules are in the welcome guide you'll receive before check-in.</p>
         <ul class="ticks">
-          <li>Outdoor swimming pool</li><li>Fitness gym</li><li>Kids play center</li>
+          <li>Outdoor swimming pool</li><li>Fitness gym</li><li>Kids play center</li><li>Game room with billiards</li>
           <li>24/7 security, CCTV in common areas</li>
           <li>Elevators to every floor</li>
-          <li>Paid public parking nearby in Araneta City (no dedicated slot)</li>
+          <li>Paid car and motorcycle parking nearby (no dedicated slot)</li>
         </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Around the building</h2>
+      <div class="amen-gal">
+        <figure><img src="img/amen-gym.jpg" alt="Gym with treadmills and bikes" loading="lazy"><figcaption><b>Gym</b>Treadmills, bikes and free weights</figcaption></figure>
+        <figure><img src="img/amen-kids.jpg" alt="Kids play center with ball pit and small tables" loading="lazy"><figcaption><b>Kids play center</b>Ball pit, play corner and little tables</figcaption></figure>
+        <figure><img src="img/amen-games.jpg" alt="Game room with billiard tables" loading="lazy"><figcaption><b>Game room</b>Billiard tables</figcaption></figure>
+        <figure><img src="img/amen-parking-car.jpg" alt="Parkway Parking entrance" loading="lazy"><figcaption><b>Car parking</b>Paid parking at Parkway Parking</figcaption></figure>
+        <figure><img src="img/amen-parking-moto.jpg" alt="Open-air motorcycle parking" loading="lazy"><figcaption><b>Motorcycle parking</b>Paid open-air parking nearby</figcaption></figure>
       </div>
     </div>
 
@@ -567,7 +583,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
       <div style="display:grid;gap:14px;min-width:0">
         <p class="eyebrow" style="color:inherit;opacity:.75">Book your stay</p>
         <h2>Find your dates</h2>
-        <p>Check availability and book securely on Airbnb. Have a question first? Send us a message through the listing and we'll get back to you.</p>
+        <p>Check availability and book securely on Airbnb. Have a question first? Send us a message through the listing or email <a href="mailto:solacecubao@gmail.com">solacecubao@gmail.com</a>.</p>
       </div>
       <div class="book-ctas" id="bookCtas"></div>
     </div>
@@ -576,7 +592,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
       <div class="notes">
         <div class="note"><h3>Check-in &amp; check-out</h3><p>Times and arrival instructions are sent after booking, with a welcome guide covering the building, pool, gym, kids play area and nearby spots.</p></div>
         <div class="note"><h3>Who it's for</h3><p>Couples, small families, friends in town for a concert at the Big Dome, and business travelers who want a kitchen and space to spread out.</p></div>
-        <div class="note"><h3>About these images</h3><p>The unit has just been renovated, and the images on this site are design renders of the finished space. Real photos are coming soon.</p></div>
+        <div class="note"><h3>About these images</h3><p>The unit has just been renovated, and the unit images on this site are design renders of the finished space. Building amenity photos are real; unit photos are coming soon.</p></div>
       </div>
     </div>
   </div>
@@ -587,6 +603,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
   <div class="wrap">
     <span class="brand" style="color:var(--fg)">Solace at Manhattan Parkway</span>
     <span>Manhattan Parkway Tower 2, 2 General Malvar Ave, Araneta City, Cubao, Quezon City, Philippines</span>
+    <a href="mailto:solacecubao@gmail.com">solacecubao@gmail.com</a>
     <span class="social">
       <a href="https://www.instagram.com/solaceatmanhattanparkway/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.8a1.4 1.4 0 100 2.9 1.4 1.4 0 000-2.9z"/></svg></a>
       <a href="https://www.facebook.com/profile.php?id=61595575206958" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
