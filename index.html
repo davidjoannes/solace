@@ -168,11 +168,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .feature .feat-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;display:block}
 .amen-gal{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
 .amen-gal figure{margin:0;grid-column:span 2;min-width:0}
-.amen-gal figure:nth-child(n+4){grid-column:span 3}
 .amen-gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;display:block}
 .amen-gal figcaption{margin-top:8px;font-size:.92rem;color:var(--muted)}
 .amen-gal figcaption b{color:var(--fg);font-weight:600;display:block}
-@media (max-width:720px){.amen-gal{grid-template-columns:1fr 1fr}.amen-gal figure,.amen-gal figure:nth-child(n+4){grid-column:span 1}}
+@media (max-width:720px){.amen-gal{grid-template-columns:1fr 1fr}.amen-gal figure}
 @media (max-width:420px){.amen-gal{grid-template-columns:1fr}}
 .feature-text{display:grid;gap:14px;min-width:0}
 .feature-text p{color:var(--muted)}
@@ -422,13 +421,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
     </div>
 
     <div class="feature">
-      <img class="feat-img" src="img/amen-gym2.jpg" alt="Manhattan Parkway Tower 2 gym with free weights and machines" loading="lazy">
+      <img class="feat-img" src="img/amen-pool.jpg" alt="Outdoor swimming pool at Manhattan Parkway" loading="lazy">
       <div class="feature-text">
         <span class="room-num">Outside the unit</span>
         <h2>Swim, train, play</h2>
-        <p>Manhattan Parkway Tower 2 has an outdoor swimming pool, a gym, a kids play center and a game room for residents and guests. Hours and rules are in the welcome guide you'll receive before check-in.</p>
+        <p>Manhattan Parkway Tower 2 has an outdoor swimming pool, a gym, a kids play center, a game room and a basketball court for residents and guests. Hours and rules are in the welcome guide you'll receive before check-in.</p>
         <ul class="ticks">
-          <li>Outdoor swimming pool</li><li>Fitness gym</li><li>Kids play center</li><li>Game room with billiards</li>
+          <li>Outdoor swimming pool</li><li>Fitness gym</li><li>Kids play center</li><li>Game room with billiards</li><li>Basketball court</li><li>Laundromat on the ground floor</li>
           <li>24/7 security, CCTV in common areas</li>
           <li>Elevators to every floor</li>
           <li>Paid car and motorcycle parking nearby (no dedicated slot)</li>
@@ -439,11 +438,20 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
     <div class="block">
       <h2>Around the building</h2>
       <div class="amen-gal">
+        <figure><img src="img/amen-pool2.jpg" alt="Pool deck with the main pool and a small round pool" loading="lazy"><figcaption><b>Pool deck</b>Garden-lined, between the towers</figcaption></figure>
         <figure><img src="img/amen-gym.jpg" alt="Gym with treadmills and bikes" loading="lazy"><figcaption><b>Gym</b>Treadmills, bikes and free weights</figcaption></figure>
         <figure><img src="img/amen-kids.jpg" alt="Kids play center with ball pit and small tables" loading="lazy"><figcaption><b>Kids play center</b>Ball pit, play corner and little tables</figcaption></figure>
         <figure><img src="img/amen-games.jpg" alt="Game room with billiard tables" loading="lazy"><figcaption><b>Game room</b>Billiard tables</figcaption></figure>
         <figure><img src="img/amen-parking-car.jpg" alt="Parkway Parking entrance" loading="lazy"><figcaption><b>Car parking</b>Paid parking at Parkway Parking</figcaption></figure>
         <figure><img src="img/amen-parking-moto.jpg" alt="Open-air motorcycle parking" loading="lazy"><figcaption><b>Motorcycle parking</b>Paid open-air parking nearby</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Laundry</h2>
+      <div class="grid2">
+        <div class="card"><h3>Manhattan Laundry</h3><p>There's no washing machine in the unit, but there's a laundromat on the ground floor of Manhattan Parkway along Aurora Blvd, near Jollibee.</p><p><b>Open daily 8 AM to 11 PM</b> (last self-service load 9 PM) · 0916 103 3238</p></div>
+        <div class="card"><h3>Prices</h3><p>Self-service washer ₱100 (up to 9 kg). Dryer ₱40 per 10 minutes (8 kg) or ₱55 per 10 minutes (14 kg). Detergent and fabric conditioner sachets from ₱12.</p><p>Drop-off service ₱60, pick-up and delivery ₱70, pressing ₱150 per kg. Prices as posted in November 2026 and may change.</p></div>
       </div>
     </div>
 
