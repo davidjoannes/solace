@@ -25,7 +25,7 @@
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.5 system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Solace at Manhattan Parkway</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Solace at Manhattan Parkway — a calm, newly designed one-bedroom stay in Araneta City, Cubao, Quezon City. Sleeps up to 5, with walkways to Gateway Mall, MRT-3 and LRT-2.">
+<meta name="description" content="Solace at Manhattan Parkway — a calm, newly designed one-bedroom stay in Araneta City, Cubao, Quezon City. Sleeps up to 6, with walkways to Gateway Mall, MRT-3 and LRT-2.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;600;700&display=swap">
@@ -307,19 +307,18 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
       <div class="hero-copy">
         <p class="eyebrow">Manhattan Parkway Tower 2 · Araneta City · Cubao</p>
         <h1>Solace<span>at Manhattan Parkway</span></h1>
-        <p class="lede">A calm, newly designed one-bedroom home in the middle of Araneta City. Warm oak, soft lighting and room for up to four, with walkways to Gateway Mall, the MRT and the LRT.</p>
+        <p class="lede">A calm, newly designed one-bedroom home in the middle of Araneta City. Warm oak, soft lighting and room for up to six, with walkways to Gateway Mall, the MRT and the LRT.</p>
         <div class="ctas">
           <a class="btn btn-primary" href="#book">Check availability</a>
           <a class="btn btn-ghost" href="#space">Tour the space</a>
         </div>
       </div>
       <div class="hero-img">
-        <img src="img/living.jpg" alt="Living room with a beige sectional sofa, round oak coffee table and fluted oak TV wall" width="1232" height="978">
-        <span class="tag">Design render · photos coming soon</span>
+        <img src="img/living.jpg" alt="Living room with a cream sofa bed, glass coffee table and fluted wood wall" width="1232" height="978">
       </div>
     </div>
     <div class="facts">
-      <div class="fact"><b>Up to 4</b><span>guests</span></div>
+      <div class="fact"><b>Up to 6</b><span>guests</span></div>
       <div class="fact"><b>42 sqm</b><span>1 bedroom · queen + sofa bed</span></div>
       <div class="fact"><b>Full kitchen</b><span>cook, dine, stay longer</span></div>
       <div class="fact"><b>Pool &amp; gym</b><span>plus a kids play area</span></div>
@@ -350,7 +349,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
     <div class="rooms">
       <article class="room">
         <div class="room-media two">
-          <button type="button" data-lb="0" aria-label="Enlarge living room image"><img src="img/living.jpg" alt="Living room with sectional sofa and fluted oak TV wall" loading="lazy"></button>
+          <button type="button" data-lb="0" aria-label="Enlarge living room image"><img src="img/living.jpg" alt="Living room with cream sofa bed and fluted wood wall" loading="lazy"></button>
           <button type="button" data-lb="1" aria-label="Enlarge sofa bed image"><img src="img/sofabed.jpg" alt="Living room sofa pulled out into a bed" loading="lazy"></button>
         </div>
         <div class="room-text">
@@ -385,7 +384,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
       <article class="room flip">
         <div class="room-media two">
           <button type="button" data-lb="4" aria-label="Enlarge kitchen image"><img src="img/kitchen.jpg" alt="L-shaped oak kitchen with stainless fridge, induction cooktop and microwave" loading="lazy"></button>
-          <button type="button" data-lb="5" aria-label="Enlarge dining image"><img src="img/dining.jpg" alt="Entryway with pull-out oak dining table, spice shelves and shoe cabinet" loading="lazy"></button>
+          <button type="button" data-lb="5" aria-label="Enlarge dining image"><img src="img/dining.jpg" alt="Entryway with oak dining table and chairs, lit display shelves and the front door" loading="lazy"></button>
         </div>
         <div class="room-text">
           <span class="room-num">Kitchen &amp; dining</span>
@@ -607,7 +606,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-bet
       <div class="notes">
         <div class="note"><h3>Check-in &amp; check-out</h3><p>Times and arrival instructions are sent after booking, with a welcome guide covering the building, pool, gym, kids play area and nearby spots.</p></div>
         <div class="note"><h3>Who it's for</h3><p>Couples, small families, friends in town for a concert at the Big Dome, and business travelers who want a kitchen and space to spread out.</p></div>
-        <div class="note"><h3>About these images</h3><p>The unit has just been renovated, and the unit images on this site are design renders of the finished space. Building amenity photos are real; unit photos are coming soon.</p></div>
+        <div class="note"><h3>Real photos</h3><p>Every photo on this site was taken in the unit and around Manhattan Parkway, so what you see is what you get.</p></div>
       </div>
     </div>
   </div>
@@ -775,9 +774,9 @@ const FOOD = [
   renderEvents('all');
 
   // ---------- lightbox ----------
-  const shots = [['img/living.jpg','Living room'],['img/sofabed.jpg','Living room with the sofa bed open'],['img/bedroom.jpg','Bedroom'],['img/wardrobe.jpg','Wardrobe and vanity'],['img/kitchen.jpg','Kitchen'],['img/dining.jpg','Dining and entryway'],['img/bath1.jpg','Bathroom'],['img/bath2.jpg','Rain shower']];
+  const shots = [['img/living.jpg','Living room'],['img/sofabed.jpg','Living room with the sofa bed open'],['img/bedroom.jpg','Bedroom'],['img/wardrobe.jpg','Wardrobe and vanity'],['img/kitchen.jpg','Kitchen'],['img/dining.jpg','Dining and entryway'],['img/bath1.jpg','Bathroom'],['img/bath2.jpg','Bathroom and shower']];
   const lb = $('#lb'), img = $('#lbImg'), cap = $('#lbCap'); let i = 0, last = null;
-  const show = n => { i = (n + shots.length) % shots.length; img.src = shots[i][0]; img.alt = shots[i][1]; cap.textContent = shots[i][1] + ' · design render'; };
+  const show = n => { i = (n + shots.length) % shots.length; img.src = shots[i][0]; img.alt = shots[i][1]; cap.textContent = shots[i][1]; };
   $$('[data-lb]').forEach(b => b.addEventListener('click', () => { last = b; show(+b.dataset.lb); lb.hidden = false; lb.querySelector('.lb-x').focus(); }));
   const close = () => { lb.hidden = true; if (last) last.focus(); };
   lb.querySelector('.lb-x').onclick = close;
